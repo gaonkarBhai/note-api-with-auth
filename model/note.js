@@ -13,10 +13,15 @@ const noteSachema = new mongoose.Schema(
       required: true,
       minlength: [10, "can not less then 10 character"],
     },
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "users",
+    },
   },
   {
     timestamps: true,
   }
 );
 
-module.exports = mongoose.model("Task", noteSachema);
+module.exports = mongoose.model("Note", noteSachema);
